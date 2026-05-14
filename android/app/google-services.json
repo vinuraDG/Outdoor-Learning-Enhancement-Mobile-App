@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1000828055417",
+    "project_id": "orc-susl",
+    "storage_bucket": "orc-susl.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000828055417:android:163e0f4ea1b133461c49a8",
+        "android_client_info": {
+          "package_name": "com.example.orc_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE00VLmfoXjP6xQVpsJAoM3A0YB_jZG54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
