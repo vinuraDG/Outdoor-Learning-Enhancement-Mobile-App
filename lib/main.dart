@@ -5,8 +5,25 @@ import 'theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await _initializeFirebase();
   runApp(const ORCApp());
+}
+
+Future<void> _initializeFirebase() async {
+  try {
+    await Firebase.initializeApp().timeout(
+      const Duration(seconds: 10),
+      onTimeout: () {
+        debugPrint('Firebase init timed out');
+        throw Exception('Firebase initialization timed out');
+      },
+    );
+    debugPrint('Firebase initialized successfully');
+  } on FirebaseException catch (e) {
+    debugPrint('FirebaseException: ${e.code} — ${e.message}');
+  } catch (e) {
+    debugPrint('Firebase init failed: $e');
+  }
 }
 
 class ORCApp extends StatelessWidget {

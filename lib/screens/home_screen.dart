@@ -81,6 +81,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
+// ═══════════════════════════════════════════
+// HOME TAB
+// ═══════════════════════════════════════════
 class _HomeTab extends StatelessWidget {
   final String greeting;
   final String name;
@@ -98,165 +101,206 @@ class _HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        // Hero header
-        SliverToBoxAdapter(
-          child: Container(
-            height: 260,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [AppTheme.deepGreen, AppTheme.forestGreen, Color(0xFF40916C)],
-              ),
-            ),
-            child: Stack(
-              children: [
-                // Decorative circles
-                Positioned(
-                  right: -30,
-                  top: -30,
-                  child: Container(
-                    width: 180,
-                    height: 180,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.06),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  right: 40,
-                  bottom: 20,
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.04),
-                    ),
-                  ),
-                ),
 
-                SafeArea(
+        // ── HERO SECTION ──
+        SliverToBoxAdapter(
+          child: Stack(
+            children: [
+              // Hero background image
+              SizedBox(
+                height: 340,
+                width: double.infinity,
+                child: Image.asset(
+                  'assets/images/hero_bg.png',
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center,
+                ),
+              ),
+
+              // Dark gradient overlay
+              Container(
+                height: 340,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0x88000000),
+                      Color(0x55000000),
+                      Color(0x33000000),
+                      Color(0x00000000),
+                    ],
+                  ),
+                ),
+              ),
+
+              // ── TOP BAR ──
+              Positioned(
+                top: 0, left: 0, right: 0,
+                child: SafeArea(
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: Row(
                       children: [
-                        // Top row
-                        Row(
+                        const Icon(Icons.explore,
+                            color: Colors.white, size: 26),
+                        const SizedBox(width: 8),
+                        const Text(
+                          'ORC SUSL',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 15,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                        const Spacer(),
+                        Stack(
                           children: [
-                            const Icon(Icons.explore, color: Colors.white, size: 28),
-                            const SizedBox(width: 8),
-                            const Text('ORC SUSL',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 16,
-                                    letterSpacing: 1)),
-                            const Spacer(),
-                            Stack(
-                              children: [
-                                const Icon(Icons.notifications_outlined,
-                                    color: Colors.white, size: 28),
-                                Positioned(
-                                  right: 0,
-                                  top: 0,
-                                  child: Container(
-                                    width: 16,
-                                    height: 16,
-                                    decoration: const BoxDecoration(
-                                      color: AppTheme.accentGold,
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: const Center(
-                                      child: Text('3',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 9,
-                                              fontWeight: FontWeight.w700)),
-                                    ),
-                                  ),
+                            Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.2),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                  Icons.notifications_outlined,
+                                  color: Colors.white,
+                                  size: 22),
+                            ),
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              child: Container(
+                                width: 16,
+                                height: 16,
+                                decoration: const BoxDecoration(
+                                  color: AppTheme.forestGreen,
+                                  shape: BoxShape.circle,
                                 ),
-                              ],
+                                child: const Center(
+                                  child: Text('3',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 9,
+                                          fontWeight: FontWeight.w700)),
+                                ),
+                              ),
                             ),
                           ],
-                        ),
-
-                        const SizedBox(height: 20),
-
-                        Text(
-                          '$greeting,',
-                          style: TextStyle(
-                              color: Colors.white.withOpacity(0.85),
-                              fontSize: 16),
-                        ),
-                        Text(
-                          name,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Ready for today\'s outdoor learning adventure?',
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.75),
-                            fontSize: 13,
-                          ),
-                        ),
-
-                        const SizedBox(height: 16),
-
-                        // Search bar
-                        Container(
-                          height: 46,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.95),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Row(
-                            children: [
-                              const SizedBox(width: 12),
-                              Icon(Icons.search, color: Colors.grey.shade400),
-                              const SizedBox(width: 8),
-                              Text('Search lessons, gear, or tips...',
-                                  style: TextStyle(
-                                      color: Colors.grey.shade400, fontSize: 13)),
-                              const Spacer(),
-                              Container(
-                                margin: const EdgeInsets.all(6),
-                                padding: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  color: AppTheme.forestGreen,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: const Icon(Icons.tune,
-                                    color: Colors.white, size: 16),
-                              ),
-                            ],
-                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+
+              // ── GREETING + SEARCH ──
+              Positioned(
+                left: 0, right: 0, bottom: 0,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Welcome Back,',
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.9),
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        '$name!',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 26,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        "Ready for today's outdoor learning adventure?",
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.85),
+                          fontSize: 13,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+
+                      // Search bar
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 48,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(14),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.08),
+                                    blurRadius: 10,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                children: [
+                                  const SizedBox(width: 14),
+                                  Icon(Icons.search,
+                                      color: Colors.grey.shade400,
+                                      size: 20),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    'Search lessons, gear, or tips...',
+                                    style: TextStyle(
+                                        color: Colors.grey.shade400,
+                                        fontSize: 13),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Container(
+                            width: 48,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.08),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Icon(Icons.tune,
+                                color: Colors.grey.shade600, size: 20),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
 
-        // Categories grid
+        // ── CATEGORIES GRID (3 columns) ──
         SliverPadding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
           sliver: SliverGrid(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.85,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
+              crossAxisCount: 3,
+              childAspectRatio: 0.78,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
             ),
             delegate: SliverChildBuilderDelegate(
               (context, index) => _CategoryCard(item: categories[index]),
@@ -265,30 +309,44 @@ class _HomeTab extends StatelessWidget {
           ),
         ),
 
-        // Continue Learning
+        // ── CONTINUE LEARNING HEADER ──
         const SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(16, 4, 16, 8),
+            padding: EdgeInsets.fromLTRB(16, 8, 16, 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Continue Learning',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: AppTheme.charcoal)),
-                Text('View All',
-                    style: TextStyle(
+                Text(
+                  'Continue Learning',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: AppTheme.charcoal,
+                  ),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'View All',
+                      style: TextStyle(
                         color: AppTheme.forestGreen,
-                        fontWeight: FontWeight.w600)),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13,
+                      ),
+                    ),
+                    Icon(Icons.chevron_right,
+                        color: AppTheme.forestGreen, size: 18),
+                  ],
+                ),
               ],
             ),
           ),
         ),
 
+        // ── LESSON CARDS (horizontal scroll) ──
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 130,
+            height: 140,
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               scrollDirection: Axis.horizontal,
@@ -310,12 +368,15 @@ class _HomeTab extends StatelessWidget {
           ),
         ),
 
-        const SliverToBoxAdapter(child: SizedBox(height: 24)),
+        const SliverToBoxAdapter(child: SizedBox(height: 28)),
       ],
     );
   }
 }
 
+// ═══════════════════════════════════════════
+// CATEGORY CARD
+// ═══════════════════════════════════════════
 class _CategoryCard extends StatelessWidget {
   final _CategoryItem item;
   const _CategoryCard({required this.item});
@@ -334,46 +395,51 @@ class _CategoryCard extends StatelessWidget {
           ),
         ],
       ),
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 48,
-            height: 48,
+            width: 44,
+            height: 10,
             decoration: BoxDecoration(
               color: item.bgColor,
               shape: BoxShape.circle,
             ),
-            child: Icon(item.icon, color: item.color, size: 24),
-          ),
-          const SizedBox(height: 12),
-          Text(item.name,
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: item.color)),
-          const SizedBox(height: 4),
-          Expanded(
-            child: Text(item.description,
-                style: TextStyle(
-                    fontSize: 11.5,
-                    color: Colors.grey.shade600,
-                    height: 1.4),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis),
+            child: Icon(item.icon, color: item.color, size: 22),
           ),
           const SizedBox(height: 8),
+          Text(
+            item.name,
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w700,
+              color: item.color,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Expanded(
+            child: Text(
+              item.description,
+              style: TextStyle(
+                fontSize: 10.5,
+                color: Colors.grey.shade600,
+                height: 1.4,
+              ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
           Align(
             alignment: Alignment.centerRight,
             child: Container(
-              width: 28,
-              height: 28,
+              width: 26,
+              height: 26,
               decoration: BoxDecoration(
                 color: item.bgColor,
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(7),
               ),
-              child: Icon(Icons.arrow_outward, color: item.color, size: 16),
+              child: Icon(Icons.arrow_outward, color: item.color, size: 14),
             ),
           ),
         ],
@@ -382,6 +448,9 @@ class _CategoryCard extends StatelessWidget {
   }
 }
 
+// ═══════════════════════════════════════════
+// LESSON CARD
+// ═══════════════════════════════════════════
 class _LessonCard extends StatelessWidget {
   final String title;
   final String tag;
@@ -416,11 +485,12 @@ class _LessonCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title,
-              style: const TextStyle(
-                  fontSize: 13, fontWeight: FontWeight.w600),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -431,11 +501,13 @@ class _LessonCard extends StatelessWidget {
                   color: color.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                child: Text(tag,
-                    style: TextStyle(
-                        color: color,
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600)),
+                child: Text(
+                  tag,
+                  style: TextStyle(
+                      color: color,
+                      fontSize: 10,
+                      fontWeight: FontWeight.w600),
+                ),
               ),
               const SizedBox(height: 6),
               LinearProgressIndicator(
@@ -446,9 +518,10 @@ class _LessonCard extends StatelessWidget {
                 minHeight: 5,
               ),
               const SizedBox(height: 4),
-              Text('${(progress * 100).toInt()}% Completed',
-                  style: TextStyle(
-                      fontSize: 11, color: Colors.grey.shade500)),
+              Text(
+                '${(progress * 100).toInt()}% Completed',
+                style: TextStyle(fontSize: 11, color: Colors.grey.shade500),
+              ),
             ],
           ),
         ],
@@ -457,6 +530,9 @@ class _LessonCard extends StatelessWidget {
   }
 }
 
+// ═══════════════════════════════════════════
+// PROFILE TAB
+// ═══════════════════════════════════════════
 class _ProfileTab extends StatelessWidget {
   final User? user;
   final VoidCallback onSignOut;
@@ -483,23 +559,24 @@ class _ProfileTab extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            Text(user?.displayName ?? 'Explorer',
-                style: const TextStyle(
-                    fontSize: 22, fontWeight: FontWeight.w700)),
-            Text(user?.email ?? '',
-                style: const TextStyle(color: AppTheme.softGray)),
+            Text(
+              user?.displayName ?? 'Explorer',
+              style: const TextStyle(
+                  fontSize: 22, fontWeight: FontWeight.w700),
+            ),
+            Text(
+              user?.email ?? '',
+              style: const TextStyle(color: AppTheme.softGray),
+            ),
             const SizedBox(height: 28),
             _ProfileTile(Icons.person_outline, 'Edit Profile', () {}),
-            _ProfileTile(Icons.notifications_outlined, 'Notifications', () {}),
+            _ProfileTile(
+                Icons.notifications_outlined, 'Notifications', () {}),
             _ProfileTile(Icons.language, 'Language', () {}),
             _ProfileTile(Icons.help_outline, 'Help & Support', () {}),
             const SizedBox(height: 8),
-            _ProfileTile(
-              Icons.logout,
-              'Sign Out',
-              onSignOut,
-              isDestructive: true,
-            ),
+            _ProfileTile(Icons.logout, 'Sign Out', onSignOut,
+                isDestructive: true),
           ],
         ),
       ),
@@ -520,13 +597,17 @@ class _ProfileTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = isDestructive ? Colors.red : AppTheme.charcoal;
     return Container(
+      
       margin: const EdgeInsets.only(bottom: 8),
       child: ListTile(
         onTap: onTap,
         tileColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12)),
         leading: Icon(icon, color: color),
-        title: Text(label, style: TextStyle(color: color, fontWeight: FontWeight.w500)),
+        title: Text(label,
+            style:
+                TextStyle(color: color, fontWeight: FontWeight.w500)),
         trailing: isDestructive
             ? null
             : const Icon(Icons.chevron_right, color: AppTheme.softGray),
@@ -535,6 +616,9 @@ class _ProfileTile extends StatelessWidget {
   }
 }
 
+// ═══════════════════════════════════════════
+// PLACEHOLDER TAB
+// ═══════════════════════════════════════════
 class _PlaceholderTab extends StatelessWidget {
   final String title;
   final IconData icon;
@@ -547,7 +631,9 @@ class _PlaceholderTab extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 56, color: AppTheme.forestGreen.withOpacity(0.4)),
+          Icon(icon,
+              size: 56,
+              color: AppTheme.forestGreen.withOpacity(0.4)),
           const SizedBox(height: 12),
           Text(title,
               style: const TextStyle(
@@ -563,6 +649,9 @@ class _PlaceholderTab extends StatelessWidget {
   }
 }
 
+// ═══════════════════════════════════════════
+// BOTTOM NAV
+// ═══════════════════════════════════════════
 class _BottomNav extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
@@ -590,8 +679,8 @@ class _BottomNav extends StatelessWidget {
         elevation: 0,
         selectedItemColor: AppTheme.forestGreen,
         unselectedItemColor: Colors.grey.shade400,
-        selectedLabelStyle: const TextStyle(
-            fontWeight: FontWeight.w600, fontSize: 11),
+        selectedLabelStyle:
+            const TextStyle(fontWeight: FontWeight.w600, fontSize: 11),
         unselectedLabelStyle: const TextStyle(fontSize: 11),
         items: const [
           BottomNavigationBarItem(
@@ -620,6 +709,9 @@ class _BottomNav extends StatelessWidget {
   }
 }
 
+// ═══════════════════════════════════════════
+// DATA MODEL
+// ═══════════════════════════════════════════
 class _CategoryItem {
   final String name;
   final IconData icon;
