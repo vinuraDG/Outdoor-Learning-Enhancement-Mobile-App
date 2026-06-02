@@ -104,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen>
               height: 180,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppTheme.forestGreen.withOpacity(0.07),
+                color: AppTheme.forestGreen.withValues(alpha: 0.07),
               ),
             ),
           ),
@@ -133,7 +133,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.08),
+                                  color: Colors.black.withValues(alpha: 0.08),
                                   blurRadius: 8,
                                 ),
                               ],
@@ -403,7 +403,7 @@ class _ProgressIndicator extends StatelessWidget {
           child: Container(
             height: 3,
             decoration: BoxDecoration(
-              color: AppTheme.forestGreen.withOpacity(0.2),
+              color: AppTheme.forestGreen.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(2),
             ),
             child: FractionallySizedBox(
