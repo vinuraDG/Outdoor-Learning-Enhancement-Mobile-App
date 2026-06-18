@@ -1,5 +1,9 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:orc_app/screens/profile/screens/about_us_screen.dart';
+import 'package:orc_app/screens/profile/screens/edit_profile_screen.dart';
+import 'package:orc_app/screens/profile/screens/help_support_screen.dart';
+import 'package:orc_app/screens/profile/screens/privacy_policy_screen.dart';
 import '../../theme/app_theme.dart';
 import '../../services/auth_service.dart';
 import '../login_screen.dart';
@@ -53,14 +57,12 @@ class ProfileTab extends StatelessWidget {
                     const SizedBox(height: 2),
                     Text(
                       user?.email ?? '',
-                      style: const TextStyle(
-                          color: AppTheme.softGray, fontSize: 13),
+                      style: const TextStyle(color: AppTheme.softGray, fontSize: 13),
                     ),
                     const SizedBox(height: 4),
                     const Text(
                       'Sri Lanka',
-                      style: TextStyle(
-                          color: AppTheme.softGray, fontSize: 12),
+                      style: TextStyle(color: AppTheme.softGray, fontSize: 12),
                     ),
                   ],
                 ),
@@ -73,22 +75,32 @@ class ProfileTab extends StatelessWidget {
               _ProfileTile(
                 icon: Icons.person_outline,
                 label: 'Edit Profile',
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const EditProfileScreen()),
+                ),
               ),
               _ProfileTile(
                 icon: Icons.settings_outlined,
                 label: 'Settings',
-                onTap: () {},
+                onTap: () {
+                  // TODO: Navigate to Settings screen
+                },
               ),
               _ProfileTile(
                 icon: Icons.notifications_outlined,
                 label: 'Notifications',
-                onTap: () {},
+                onTap: () {
+                  // TODO: Navigate to Notifications screen
+                },
               ),
               _ProfileTile(
                 icon: Icons.privacy_tip_outlined,
                 label: 'Privacy Policy',
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const PrivacyPolicyScreen()),
+                ),
               ),
 
               const SizedBox(height: 8),
@@ -98,12 +110,18 @@ class ProfileTab extends StatelessWidget {
               _ProfileTile(
                 icon: Icons.help_outline,
                 label: 'Help & Support',
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const HelpSupportScreen()),
+                ),
               ),
               _ProfileTile(
                 icon: Icons.info_outline,
                 label: 'About Us',
-                onTap: () {},
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const AboutUsScreen()),
+                ),
               ),
 
               const SizedBox(height: 8),
@@ -182,7 +200,11 @@ class _ProfileTile extends StatelessWidget {
         leading: Icon(icon, color: color, size: 22),
         title: Text(
           label,
-          style: TextStyle(color: color, fontWeight: FontWeight.w500, fontSize: 14),
+          style: TextStyle(
+            color: color,
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+          ),
         ),
         trailing: isDestructive
             ? null
