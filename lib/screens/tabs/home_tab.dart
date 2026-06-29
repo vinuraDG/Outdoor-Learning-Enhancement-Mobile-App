@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:orc_app/screens/details/category_detail_screen.dart';
+import 'package:orc_app/screens/categories/category_detail_screen.dart';
 import 'package:orc_app/screens/details/lesson_detail_screen.dart';
 import '../../models/mock_data.dart';
 import '../../theme/app_theme.dart';

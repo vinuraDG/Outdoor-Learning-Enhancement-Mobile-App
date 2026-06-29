@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Brand Colors
+  // ── Brand Colors ─────────────────────────────────────────
   static const Color forestGreen = Color(0xFF2D6A4F);
   static const Color deepGreen   = Color(0xFF1B4332);
   static const Color lightGreen  = Color(0xFF74C69D);
@@ -13,6 +13,15 @@ class AppTheme {
   static const Color softGray    = Color(0xFF636E72);
   static const Color cardWhite   = Color(0xFFFFFFFF);
 
+  // ── Category Colors (derived from brand palette) ─────────
+  static const Color safetyColor     = forestGreen;           // green
+  static const Color equipmentColor  = Color(0xFF1A7A6E);     // teal-green
+  static const Color navigationColor = deepGreen;             // dark green
+  static const Color weatherColor    = accentGold;            // gold/amber
+  static const Color learnColor      = skyBlue;               // sky blue
+  static const Color communityColor  = Color(0xFF7B6FAB);     // muted purple
+
+  // ── Light Theme ─────────────────────────────────────────
   static ThemeData get lightTheme => ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
