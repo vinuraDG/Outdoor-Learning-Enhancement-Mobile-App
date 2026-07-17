@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../theme/app_theme.dart';
+import 'equipment_topic_screen.dart';
+import 'backpacks/backpacks_data.dart';
+import 'tents/tents_data.dart';
+import 'clothing/clothing_data.dart';
+import 'cooking_gear/cooking_gear_data.dart';
+import 'tools/tools_data.dart';
 
+/// Routes each equipment item to its dedicated sub-category topic screen.
 class EquipmentDetailScreen extends StatelessWidget {
   final Map<String, dynamic> item;
 
@@ -8,223 +14,107 @@ class EquipmentDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = item['color'] as Color;
+    final title = item['title'] as String;
 
+    switch (title) {
+      case 'Backpacks':
+        return const EquipmentTopicScreen(
+          topicTitle: 'Backpacks',
+          tagline: 'Carry Smart. Hike Far.',
+          taglineSubtitle: 'Choose your pack type and build the perfect kit.',
+          themeColor: Color(0xFF1A7A6E),
+          themeIcon: Icons.backpack_outlined,
+          categories: BackpacksData.categories,
+          guides: BackpacksData.guides,
+        );
+
+      case 'Tents & Shelters':
+        return const EquipmentTopicScreen(
+          topicTitle: 'Tents & Shelters',
+          tagline: 'Shelter from the Storm.',
+          taglineSubtitle: 'Find the right shelter for every season and terrain.',
+          themeColor: Color(0xFF2D6A4F),
+          themeIcon: Icons.night_shelter_outlined,
+          categories: TentsData.categories,
+          guides: TentsData.guides,
+        );
+
+      case 'Clothing':
+        return const EquipmentTopicScreen(
+          topicTitle: 'Clothing',
+          tagline: 'Layer Up. Stay Comfortable.',
+          taglineSubtitle:
+              'Build a clothing system for every weather condition.',
+          themeColor: Color(0xFF1565C0),
+          themeIcon: Icons.dry_cleaning_outlined,
+          categories: ClothingData.categories,
+          guides: ClothingData.guides,
+        );
+
+      case 'Cooking Gear':
+        return const EquipmentTopicScreen(
+          topicTitle: 'Cooking Gear',
+          tagline: 'Fuel Your Adventure.',
+          taglineSubtitle:
+              'Choose the right stove, cookware, and food system.',
+          themeColor: Color(0xFFE64A19),
+          themeIcon: Icons.soup_kitchen_outlined,
+          categories: CookingGearData.categories,
+          guides: CookingGearData.guides,
+        );
+
+      case 'Tools & Accessories':
+        return const EquipmentTopicScreen(
+          topicTitle: 'Tools & Accessories',
+          tagline: 'Ready for Anything.',
+          taglineSubtitle: 'The tools that keep you safe and self-sufficient.',
+          themeColor: Color(0xFF5D4037),
+          themeIcon: Icons.handyman_outlined,
+          categories: ToolsData.categories,
+          guides: ToolsData.guides,
+        );
+
+      default:
+        return _EquipmentPlaceholder(item: item);
+    }
+  }
+}
+
+class _EquipmentPlaceholder extends StatelessWidget {
+  final Map<String, dynamic> item;
+  const _EquipmentPlaceholder({required this.item});
+
+  @override
+  Widget build(BuildContext context) {
+    final color = item['color'] as Color;
     return Scaffold(
-      backgroundColor: const Color(0xFFF4F6F4),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            expandedHeight: 180,
-            pinned: true,
-            backgroundColor: color,
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () => Navigator.pop(context),
-            ),
-            title: Text(
+      appBar: AppBar(
+        backgroundColor: color,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text(
+          item['title'] as String,
+          style: const TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w700),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(item['icon'] as IconData, color: color, size: 64),
+            const SizedBox(height: 16),
+            Text(
               item['title'] as String,
               style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w700),
+                  fontSize: 20, fontWeight: FontWeight.w700),
             ),
-            flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [color, color.withOpacity(0.7)],
-                  ),
-                ),
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          width: 52,
-                          height: 52,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          child: Icon(item['icon'] as IconData,
-                              color: Colors.white, size: 28),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          item['subtitle'] as String,
-                          style: TextStyle(
-                              color: Colors.white.withOpacity(0.9),
-                              fontSize: 13),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _ContentCard(
-                    title: 'About This Gear',
-                    child: Text(
-                      item['description'] as String? ??
-                          'Learn everything about ${item['title']} — how to choose, '
-                          'use, and maintain it for your outdoor adventures.',
-                      style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey.shade700,
-                          height: 1.6),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  _ContentCard(
-                    title: 'What to Look For',
-                    child: Column(
-                      children: [
-                        _KeyPoint(color: color, text: 'Durability and material quality'),
-                        _KeyPoint(color: color, text: 'Weight and packability for your needs'),
-                        _KeyPoint(color: color, text: 'Weather resistance and protection rating'),
-                        _KeyPoint(color: color, text: 'Ease of use in field conditions'),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  _ContentCard(
-                    title: 'Maintenance Tips',
-                    child: Column(
-                      children: [
-                        'Clean and dry equipment after each use.',
-                        'Inspect for wear and damage regularly.',
-                        'Store in a cool, dry place away from sunlight.',
-                      ]
-                          .map(
-                            (tip) => Padding(
-                              padding: const EdgeInsets.only(bottom: 10),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Icon(Icons.build_outlined,
-                                      color: color, size: 16),
-                                  const SizedBox(width: 8),
-                                  Expanded(
-                                    child: Text(
-                                      tip,
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          color: Colors.grey.shade700,
-                                          height: 1.5),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: color,
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12)),
-                      ),
-                      child: const Text(
-                        'View Full Guide',
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ContentCard extends StatelessWidget {
-  final String title;
-  final Widget child;
-
-  const _ContentCard({required this.title, required this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
-        boxShadow: [
-          BoxShadow(
-              color: Colors.black.withOpacity(0.04),
-              blurRadius: 6,
-              offset: const Offset(0, 2)),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title,
-              style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w700,
-                  color: AppTheme.charcoal)),
-          const SizedBox(height: 12),
-          child,
-        ],
-      ),
-    );
-  }
-}
-
-class _KeyPoint extends StatelessWidget {
-  final Color color;
-  final String text;
-
-  const _KeyPoint({required this.color, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 6,
-            height: 6,
-            margin: const EdgeInsets.only(top: 5),
-            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-          ),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(text,
-                style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.grey.shade700,
-                    height: 1.5)),
-          ),
-        ],
+            const SizedBox(height: 8),
+            const Text('Coming soon'),
+          ],
+        ),
       ),
     );
   }
