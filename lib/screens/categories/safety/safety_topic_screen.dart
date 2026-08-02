@@ -13,6 +13,7 @@ class SafetyTopicScreen extends StatelessWidget {
   final IconData themeIcon;
   final List<SafetyCategory> categories;
   final List<SafetyLesson> lessons;
+  final String? imagePath;
 
   const SafetyTopicScreen({
     super.key,
@@ -23,6 +24,7 @@ class SafetyTopicScreen extends StatelessWidget {
     required this.themeIcon,
     required this.categories,
     required this.lessons,
+    this.imagePath,
   });
 
   SafetyLesson? _lessonForCategory(String categoryId) {
@@ -54,18 +56,26 @@ class SafetyTopicScreen extends StatelessWidget {
                   color: Colors.white, fontWeight: FontWeight.w700),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [themeColor, themeColor.withOpacity(0.72)],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  if (imagePath != null)
+                    Image.asset(imagePath!, fit: BoxFit.cover),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: imagePath != null
+                            ? [themeColor.withOpacity(0.72), themeColor.withOpacity(0.45)]
+                            : [themeColor, themeColor.withOpacity(0.72)],
+                      ),
+                    ),
                   ),
-                ),
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
-                    child: Column(
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
+                      child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -129,6 +139,7 @@ class SafetyTopicScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                ],
               ),
             ),
           ),

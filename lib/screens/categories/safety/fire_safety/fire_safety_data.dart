@@ -63,7 +63,7 @@ class FireSafetyData {
       description:
           'How to choose the right location, build a safe fire ring, and manage your campfire responsibly.',
       duration: '9 min',
-      youtubeVideoId: 'YN6xCKPBqAw', // How to build a safe campfire
+      youtubeVideoId: '7uInRamVDpY', // How to build a safe campfire
       introduction:
           'A campfire is one of the most satisfying parts of any outdoor trip — and one of the most '
           'dangerous if handled carelessly. Every year, improperly managed campfires cause devastating '
@@ -86,7 +86,7 @@ class FireSafetyData {
       description:
           'How to recognise high-risk wildfire conditions, understand fire behaviour, and evacuate safely if a wildfire approaches.',
       duration: '11 min',
-      youtubeVideoId: 'h5iaMkwnl4I', // Wildfire awareness and evacuation guide
+      youtubeVideoId: 'p0Q8B9K79Q8', // Wildfire awareness and evacuation guide
       introduction:
           'Wildfires move with frightening speed — under certain atmospheric and fuel conditions, '
           'a fire front can travel faster than a running person and change direction without warning. '
@@ -109,7 +109,7 @@ class FireSafetyData {
       description:
           'Reliable methods to start a fire in wet, cold, and windy conditions using matches, lighters, and friction fire.',
       duration: '10 min',
-      youtubeVideoId: '3gy9E9xWBV8', // Survival fire starting techniques
+      youtubeVideoId: 'ZPr-a8kht2E', // Survival fire starting techniques
       introduction:
           'The ability to reliably start a fire in adverse conditions is one of the most fundamental '
           'survival skills you can develop. In cold, wet, or windy environments, fire provides warmth, '
@@ -132,7 +132,7 @@ class FireSafetyData {
       description:
           'The correct step-by-step technique for completely extinguishing a campfire so it cannot reignite and cause a wildfire.',
       duration: '6 min',
-      youtubeVideoId: 'DKA_8O3XdcI', // How to properly put out a campfire
+      youtubeVideoId: '6tRRROtfuxE', // How to properly put out a campfire
       introduction:
           'An improperly extinguished campfire is one of the leading causes of preventable wildfires globally. '
           'Embers can remain alive and capable of reigniting for many hours — even days in dry, '
@@ -155,7 +155,7 @@ class FireSafetyData {
       description:
           'Safe practices for camp stoves, cooking fires, and managing pressurised fuel canisters in the outdoors.',
       duration: '8 min',
-      youtubeVideoId: 'BcHPGrH6RxI', // Camp stove and cooking fire safety
+      youtubeVideoId: '2bnxPIr34SA', // Camp stove and cooking fire safety
       introduction:
           'Camp stoves and outdoor cooking fires present specific hazards that differ significantly '
           'from warmth campfires. The combination of liquid fuels, pressurised canisters, cooking oils, '
@@ -178,7 +178,7 @@ class FireSafetyData {
       description:
           'Minimising your fire impact on the environment and understanding Leave No Trace fire ethics.',
       duration: '7 min',
-      youtubeVideoId: 'b9d11-5E9oo', // Leave No Trace fire principles
+      youtubeVideoId: 'kx-TvlMB1QA', // Leave No Trace fire principles
       introduction:
           'Leave No Trace Principle 5 — "Minimise Campfire Impacts" — acknowledges that campfires '
           'have significant and often permanent environmental impacts even when managed safely. '

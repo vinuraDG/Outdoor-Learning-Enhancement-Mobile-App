@@ -101,7 +101,7 @@ class FirstAidData {
       title: 'Water Emergency Response',
       description: 'How to respond to drowning and water-related emergencies safely and effectively.',
       duration: '9 min',
-      youtubeVideoId: 'KMrDg4e8K9A', // Water rescue first aid
+      youtubeVideoId: 'Hlrbio-NpxQ', // Water rescue first aid
       introduction:
           'Water emergencies can happen in seconds. Whether you\'re at a river, lake, or pool, '
           'knowing how to respond can save a life. This lesson covers safe rescue techniques, '
@@ -120,7 +120,7 @@ class FirstAidData {
       title: 'CPR & Rescue Breathing',
       description: 'Master the fundamentals of CPR and how to open and maintain a clear airway.',
       duration: '11 min',
-      youtubeVideoId: 'cosVnrcABSQ', // CPR tutorial
+      youtubeVideoId: '_F4Of33ifbw', // CPR tutorial
       introduction:
           'Cardiac arrest and choking are among the most time-critical emergencies you can face outdoors. '
           'Early CPR can double or triple survival rates. Learn how to assess an unconscious person, '
@@ -139,7 +139,7 @@ class FirstAidData {
       title: 'Trail Injury Management',
       description: 'Treating sprains, fractures, blisters and other common hiking injuries in the field.',
       duration: '8 min',
-      youtubeVideoId: 'NMBPSbpvLaA', // Hiking first aid
+      youtubeVideoId: 'mYWmUsTHLKo', // Hiking first aid
       introduction:
           'Remote trails mean limited access to medical care. Knowing how to treat common injuries '
           'on the spot can prevent a minor problem from becoming a serious one. This lesson walks you '
@@ -159,7 +159,7 @@ class FirstAidData {
       title: 'Wound Care & Bleeding Control',
       description: 'How to clean wounds, control bleeding, and prevent infection outdoors.',
       duration: '7 min',
-      youtubeVideoId: 'AKQkMBhxrBc', // Wound care
+      youtubeVideoId: 'NxO5LvgqZe0', // Wound care
       introduction:
           'Uncontrolled bleeding is one of the leading causes of preventable death in outdoor emergencies. '
           'Even a minor cut can become infected without proper care. This lesson teaches you how to '
@@ -179,7 +179,7 @@ class FirstAidData {
       title: 'Burns & Heat Emergencies',
       description: 'Treating burns, heat exhaustion and heat stroke in outdoor settings.',
       duration: '8 min',
-      youtubeVideoId: '6kIfLJl3BiE', // Burns first aid
+      youtubeVideoId: 'JwlSXhSg69A', // Burns first aid
       introduction:
           'Heat-related illnesses and burns are common outdoor hazards. Heat stroke is a life-threatening '
           'condition that requires immediate cooling. This lesson explains how to classify burns by '
@@ -199,7 +199,7 @@ class FirstAidData {
       title: 'Bites, Stings & Allergic Reactions',
       description: 'First aid for snake bites, insect stings, bee stings and anaphylaxis.',
       duration: '10 min',
-      youtubeVideoId: 'xJbSAHFd_Bc', // Snake bite first aid
+      youtubeVideoId: 'lLkw4BXa7pQ', // Snake bite first aid
       introduction:
           'Encounters with wildlife are part of the outdoor experience, but some can be dangerous. '
           'Knowing how to respond to a snake bite, severe allergic reaction, or swarm of bee stings '

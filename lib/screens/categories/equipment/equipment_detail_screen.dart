@@ -26,6 +26,7 @@ class EquipmentDetailScreen extends StatelessWidget {
           themeIcon: Icons.backpack_outlined,
           categories: BackpacksData.categories,
           guides: BackpacksData.guides,
+          imagePath: 'assets/images/backpack.png',
         );
 
       case 'Tents & Shelters':
@@ -37,6 +38,7 @@ class EquipmentDetailScreen extends StatelessWidget {
           themeIcon: Icons.night_shelter_outlined,
           categories: TentsData.categories,
           guides: TentsData.guides,
+          imagePath: 'assets/images/tents and shelters.png',
         );
 
       case 'Clothing':
@@ -49,6 +51,7 @@ class EquipmentDetailScreen extends StatelessWidget {
           themeIcon: Icons.dry_cleaning_outlined,
           categories: ClothingData.categories,
           guides: ClothingData.guides,
+          imagePath: 'assets/images/clothing.png',
         );
 
       case 'Cooking Gear':
@@ -72,6 +75,7 @@ class EquipmentDetailScreen extends StatelessWidget {
           themeIcon: Icons.handyman_outlined,
           categories: ToolsData.categories,
           guides: ToolsData.guides,
+          imagePath: 'assets/images/tools and accessories.png',
         );
 
       default:

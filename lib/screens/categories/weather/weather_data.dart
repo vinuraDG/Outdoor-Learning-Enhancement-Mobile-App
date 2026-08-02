@@ -155,7 +155,7 @@ class WeatherData {
           'different forecast elements — precipitation probability, wind speed, humidity — and '
           'combining them with on-the-ground sky observation gives you far more reliable '
           'situational awareness than any single source alone.',
-      youtubeVideoId: 'p3vEJkNPSQ4',
+      youtubeVideoId: 'hDAjIIfSC6I',
       icon: Icons.cloud_outlined,
       color: Color(0xFF1565C0),
       bgColor: Color(0xFFE3F2FD),
@@ -176,7 +176,7 @@ class WeatherData {
           'Extreme weather is the leading cause of preventable outdoor fatalities globally. '
           'Knowing how to recognise the early signs of dangerous conditions and how to respond '
           'correctly to lightning, heat illness, hypothermia, and flash flooding can save your life.',
-      youtubeVideoId: 'uElWFBCDmHA',
+      youtubeVideoId: 'q-7ya7gYME0',
       icon: Icons.umbrella_outlined,
       color: Color(0xFFE53935),
       bgColor: Color(0xFFFFEBEE),
@@ -198,7 +198,7 @@ class WeatherData {
           'Understanding seasonal weather patterns, adjusting your gear layering system, '
           'and anticipating seasonal hazards (snow bridges in spring, thunderstorms in summer, '
           'early darkness in autumn, cold-injury risk in winter) makes every season enjoyable.',
-      youtubeVideoId: 'O6D1MMHF_oM',
+      youtubeVideoId: 'pq2p3Yl1pVg',
       icon: Icons.ac_unit_outlined,
       color: Color(0xFF0097A7),
       bgColor: Color(0xFFE0F7FA),

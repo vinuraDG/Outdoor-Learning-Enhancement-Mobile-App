@@ -31,54 +31,63 @@ class LearnScreen extends StatelessWidget {
                   TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [Color(0xFF0D47A1), Color(0xFF1976D2)],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    'assets/images/learn.png',
+                    fit: BoxFit.cover,
                   ),
-                ),
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        const Text(
-                          'Grow Your Outdoor Knowledge',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          'Guides, articles, tips, videos, and quizzes — all in one place.',
-                          style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.8),
-                            fontSize: 13,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        Row(
-                          children: [
-                            _StatChip(Icons.book_outlined,
-                                '${LearnData.guides.length} Guides'),
-                            const SizedBox(width: 8),
-                            _StatChip(Icons.article_outlined,
-                                '${LearnData.articles.length} Articles'),
-                            const SizedBox(width: 8),
-                            _StatChip(Icons.play_circle_outlined,
-                                '${LearnData.videos.length} Videos'),
-                          ],
-                        ),
-                      ],
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Color(0xB30D47A1), Color(0x730D47A1)],
+                      ),
                     ),
                   ),
-                ),
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Text(
+                            'Grow Your Outdoor Knowledge',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            'Guides, articles, tips, videos, and quizzes — all in one place.',
+                            style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.9),
+                              fontSize: 13,
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          Row(
+                            children: [
+                              _StatChip(Icons.book_outlined,
+                                  '${LearnData.guides.length} Guides'),
+                              const SizedBox(width: 8),
+                              _StatChip(Icons.article_outlined,
+                                  '${LearnData.articles.length} Articles'),
+                              const SizedBox(width: 8),
+                              _StatChip(Icons.play_circle_outlined,
+                                  '${LearnData.videos.length} Videos'),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

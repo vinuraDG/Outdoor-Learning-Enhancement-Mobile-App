@@ -26,15 +26,20 @@ class FirstAidCategoriesScreen extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [Color(0xFFE53935), Color(0xFFB71C1C)],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset('assets/images/basic first aid.png', fit: BoxFit.cover),
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Color(0xB8E53935), Color(0x73B71C1C)],
+                      ),
+                    ),
                   ),
-                ),
-                child: SafeArea(
+                  SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
                     child: Column(
@@ -102,6 +107,7 @@ class FirstAidCategoriesScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                ],
               ),
             ),
           ),

@@ -43,3 +43,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignored assets
+D:\Flutter-Projects\orc_app\assets\images

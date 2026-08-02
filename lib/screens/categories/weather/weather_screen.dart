@@ -36,15 +36,23 @@ class WeatherScreen extends StatelessWidget {
               ),
             ],
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [Color(0xFF0D47A1), Color(0xFF1976D2)],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    'assets/images/weather.png',
+                    fit: BoxFit.cover,
                   ),
-                ),
-                child: SafeArea(
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Color(0xB30D47A1), Color(0x730D47A1)],
+                      ),
+                    ),
+                  ),
+                  SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 60, 20, 16),
                     child: Column(
@@ -115,6 +123,7 @@ class WeatherScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                ],
               ),
             ),
           ),

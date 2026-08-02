@@ -37,62 +37,70 @@ class CommunityScreen extends StatelessWidget {
               ),
             ],
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [Color(0xFF4A148C), _purple],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    'assets/images/community.png',
+                    fit: BoxFit.cover,
                   ),
-                ),
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 56, 20, 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        const Text(
-                          'Connect & Share',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'Join Sri Lanka\'s outdoor learning community.',
-                          style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.8),
-                            fontSize: 13,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        // Stats row
-                        Row(
-                          children: [
-                            _StatChip(
-                              value:
-                                  '${(CommunityData.memberCount / 1000).toStringAsFixed(1)}K',
-                              label: 'Members',
-                            ),
-                            const SizedBox(width: 12),
-                            _StatChip(
-                              value: '${CommunityData.postCount}',
-                              label: 'Posts',
-                            ),
-                            const SizedBox(width: 12),
-                            _StatChip(
-                              value: '${CommunityData.eventCount}',
-                              label: 'Events',
-                            ),
-                          ],
-                        ),
-                      ],
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Color(0xB34A148C), Color(0x736A1B9A)],
+                      ),
                     ),
                   ),
-                ),
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 56, 20, 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Text(
+                            'Connect & Share',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'Join Sri Lanka\'s outdoor learning community.',
+                            style: TextStyle(
+                              color: Colors.white.withValues(alpha: 0.9),
+                              fontSize: 13,
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          Row(
+                            children: [
+                              _StatChip(
+                                value:
+                                    '${(CommunityData.memberCount / 1000).toStringAsFixed(1)}K',
+                                label: 'Members',
+                              ),
+                              const SizedBox(width: 12),
+                              _StatChip(
+                                value: '${CommunityData.postCount}',
+                                label: 'Posts',
+                              ),
+                              const SizedBox(width: 12),
+                              _StatChip(
+                                value: '${CommunityData.eventCount}',
+                                label: 'Events',
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
