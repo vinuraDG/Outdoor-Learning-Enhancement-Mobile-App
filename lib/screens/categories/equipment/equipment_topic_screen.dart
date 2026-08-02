@@ -115,19 +115,19 @@ class EquipmentTopicScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 16),
-                          Row(
+                          const SizedBox(height: 12),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 6,
                             children: [
                               _StatChip(
                                 icon: Icons.checklist_outlined,
                                 label: '${categories.length} Gear Types',
                               ),
-                              const SizedBox(width: 10),
                               const _StatChip(
                                 icon: Icons.shopping_bag_outlined,
                                 label: 'Buying Guides',
                               ),
-                              const SizedBox(width: 10),
                               const _StatChip(
                                 icon: Icons.build_outlined,
                                 label: 'Care Tips',

@@ -70,15 +70,15 @@ class LearnScreen extends StatelessWidget {
                               fontSize: 13,
                             ),
                           ),
-                          const SizedBox(height: 16),
-                          Row(
+                          const SizedBox(height: 12),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 6,
                             children: [
                               _StatChip(Icons.book_outlined,
                                   '${LearnData.guides.length} Guides'),
-                              const SizedBox(width: 8),
                               _StatChip(Icons.article_outlined,
                                   '${LearnData.articles.length} Articles'),
-                              const SizedBox(width: 8),
                               _StatChip(Icons.play_circle_outlined,
                                   '${LearnData.videos.length} Videos'),
                             ],

@@ -23,6 +23,9 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     final name = user?.displayName ?? user?.email?.split('@')[0] ?? 'Explorer';
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final heroHeight = (screenHeight * 0.40).clamp(240.0, 340.0);
 
     return CustomScrollView(
       slivers: [
@@ -31,7 +34,7 @@ class HomeTab extends StatelessWidget {
           child: Stack(
             children: [
               SizedBox(
-                height: 340,
+                height: heroHeight,
                 width: double.infinity,
                 child: Image.asset(
                   'assets/images/hero_bg.png',
@@ -46,7 +49,7 @@ class HomeTab extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 340,
+                height: heroHeight,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
@@ -118,7 +121,7 @@ class HomeTab extends StatelessWidget {
                   ),
                 ),
               ),
-              // Greeting + Search
+              // Greeting
               Positioned(
                 left: 0, right: 0, bottom: 0,
                 child: Padding(
@@ -129,25 +132,27 @@ class HomeTab extends StatelessWidget {
                       Text(
                         '$_greeting,',
                         style: TextStyle(
-                            color: Colors.white.withOpacity(0.9), fontSize: 16),
+                            color: Colors.white.withOpacity(0.9), fontSize: 15),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 6),
                       Text(
                         '$name!',
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 26,
+                          fontSize: 24,
                           fontWeight: FontWeight.w800,
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 6),
                       Text(
                         "Ready for today's outdoor learning adventure?",
                         style: TextStyle(
-                            color: Colors.white.withOpacity(0.85), fontSize: 13),
+                            color: Colors.white.withOpacity(0.85), fontSize: 12),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      const SizedBox(height: 80),
-                      
                     ],
                   ),
                 ),
@@ -160,9 +165,9 @@ class HomeTab extends StatelessWidget {
         SliverPadding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
           sliver: SliverGrid(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              childAspectRatio: 0.78,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: screenWidth < 360 ? 2 : 3,
+              childAspectRatio: screenWidth < 360 ? 1.0 : 0.80,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
             ),
@@ -190,7 +195,7 @@ class HomeTab extends StatelessWidget {
 
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 140,
+            height: 148,
             child: ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               scrollDirection: Axis.horizontal,

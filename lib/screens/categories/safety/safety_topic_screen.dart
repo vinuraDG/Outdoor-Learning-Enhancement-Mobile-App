@@ -116,19 +116,19 @@ class SafetyTopicScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 16),
-                        Row(
+                        const SizedBox(height: 12),
+                        Wrap(
+                          spacing: 8,
+                          runSpacing: 6,
                           children: [
                             _StatChip(
                               icon: Icons.play_circle_outline,
                               label: '${categories.length} Topics',
                             ),
-                            const SizedBox(width: 10),
                             const _StatChip(
                               icon: Icons.timer_outlined,
                               label: 'Avg. 8 min',
                             ),
-                            const SizedBox(width: 10),
                             const _StatChip(
                               icon: Icons.videocam_outlined,
                               label: 'Video Guides',

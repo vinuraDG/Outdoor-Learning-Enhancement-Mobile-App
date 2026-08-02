@@ -53,7 +53,7 @@ class WeatherScreen extends StatelessWidget {
                     ),
                   ),
                   SafeArea(
-                  child: Padding(
+                    child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 60, 20, 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
