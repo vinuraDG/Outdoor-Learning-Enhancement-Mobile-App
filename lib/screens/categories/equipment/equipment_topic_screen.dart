@@ -166,7 +166,7 @@ class EquipmentTopicScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: 1.05,
+                childAspectRatio: 0.80,
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) {

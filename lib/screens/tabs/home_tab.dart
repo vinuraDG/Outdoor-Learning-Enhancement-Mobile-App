@@ -167,7 +167,7 @@ class HomeTab extends StatelessWidget {
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: screenWidth < 360 ? 2 : 3,
-              childAspectRatio: screenWidth < 360 ? 1.0 : 0.80,
+              childAspectRatio: screenWidth < 360 ? 0.82 : 0.70,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
             ),

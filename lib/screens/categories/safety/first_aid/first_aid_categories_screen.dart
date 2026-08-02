@@ -16,7 +16,7 @@ class FirstAidCategoriesScreen extends StatelessWidget {
           SliverAppBar(
             expandedHeight: 210,
             pinned: true,
-            backgroundColor: const Color(0xFFE53935),
+            
             leading: IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () => Navigator.pop(context),
@@ -134,7 +134,7 @@ class FirstAidCategoriesScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: 1.05,
+                childAspectRatio: 0.80,
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, index) {

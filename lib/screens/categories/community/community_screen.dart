@@ -77,19 +77,19 @@ class CommunityScreen extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 16),
-                          Row(
+                          Wrap(
+                            spacing: 12,
+                            runSpacing: 8,
                             children: [
                               _StatChip(
                                 value:
                                     '${(CommunityData.memberCount / 1000).toStringAsFixed(1)}K',
                                 label: 'Members',
                               ),
-                              const SizedBox(width: 12),
                               _StatChip(
                                 value: '${CommunityData.postCount}',
                                 label: 'Posts',
                               ),
-                              const SizedBox(width: 12),
                               _StatChip(
                                 value: '${CommunityData.eventCount}',
                                 label: 'Events',
@@ -144,7 +144,7 @@ class CommunityScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: 1.55,
+                childAspectRatio: 1.30,
               ),
               delegate: SliverChildListDelegate([
                 _SectionCard(
@@ -337,7 +337,7 @@ class CommunityScreen extends StatelessWidget {
             ),
           ),
 
-          const SliverToBoxAdapter(child: SizedBox(height: 28)),
+          const SliverToBoxAdapter(child: SizedBox(height: 100)),
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
