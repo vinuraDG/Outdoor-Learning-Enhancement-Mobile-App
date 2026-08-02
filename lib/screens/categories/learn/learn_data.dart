@@ -653,7 +653,7 @@ class LearnData {
       description:
           'Master contour lines, map symbols, and how to translate the flat map into the 3D terrain around you.',
       duration: '11 min',
-      youtubeVideoId: 'nKf8b-mrNnI',
+      youtubeVideoId: 'CoVcRxza8nI',
       category: 'Navigation',
       categoryColor: Color(0xFF1565C0),
       keyPoints: [
@@ -669,7 +669,7 @@ class LearnData {
       description:
           'Take a bearing, follow it in the field, and triangulate your position using a map and compass.',
       duration: '9 min',
-      youtubeVideoId: '5_RJNdduvOs',
+      youtubeVideoId: '7MQUIYsmQhc',
       category: 'Navigation',
       categoryColor: Color(0xFF1565C0),
       keyPoints: [
@@ -685,7 +685,7 @@ class LearnData {
       description:
           'The seven principles of responsible outdoor ethics explained with real backcountry examples.',
       duration: '8 min',
-      youtubeVideoId: '7v49n_wTFjY',
+      youtubeVideoId: 'jXO1uY0MvmQ',
       category: 'Ethics',
       categoryColor: Color(0xFF2D6A4F),
       keyPoints: [
@@ -701,7 +701,7 @@ class LearnData {
       description:
           'Filter vs. chemical vs. UV treatment — understand the pathogens, the methods, and when to use each.',
       duration: '7 min',
-      youtubeVideoId: 'gMG0fq8i8gI',
+      youtubeVideoId: 'Cra1FFeN0bg',
       category: 'Survival',
       categoryColor: Color(0xFF0097A7),
       keyPoints: [
@@ -717,7 +717,7 @@ class LearnData {
       description:
           'From site selection to final guylines — a complete tent pitching guide for any conditions.',
       duration: '10 min',
-      youtubeVideoId: 'KmJq-nz4XBs',
+      youtubeVideoId: '_6J-UPxiPPc',
       category: 'Equipment',
       categoryColor: Color(0xFF1A7A6E),
       keyPoints: [
@@ -733,7 +733,7 @@ class LearnData {
       description:
           'Scene assessment, primary survey, and the initial management of common backcountry emergencies.',
       duration: '13 min',
-      youtubeVideoId: 'ZqKTZyqfHtw',
+      youtubeVideoId: 'nnUQHKZqnkw',
       category: 'Safety',
       categoryColor: Color(0xFFE53935),
       keyPoints: [

@@ -131,6 +131,7 @@ class HomeTab extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white.withOpacity(0.9), fontSize: 16),
                       ),
+                      const SizedBox(height: 20),
                       Text(
                         '$name!',
                         style: const TextStyle(
@@ -139,64 +140,14 @@ class HomeTab extends StatelessWidget {
                           fontWeight: FontWeight.w800,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 20),
                       Text(
                         "Ready for today's outdoor learning adventure?",
                         style: TextStyle(
                             color: Colors.white.withOpacity(0.85), fontSize: 13),
                       ),
-                      const SizedBox(height: 16),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              height: 48,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(14),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.08),
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 14),
-                                  Icon(Icons.search,
-                                      color: Colors.grey.shade400, size: 20),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    'Search lessons, gear, or tips...',
-                                    style: TextStyle(
-                                        color: Colors.grey.shade400, fontSize: 13),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Container(
-                            width: 48,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.08),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
-                            ),
-                            child: Icon(Icons.tune,
-                                color: Colors.grey.shade600, size: 20),
-                          ),
-                        ],
-                      ),
+                      const SizedBox(height: 80),
+                      
                     ],
                   ),
                 ),

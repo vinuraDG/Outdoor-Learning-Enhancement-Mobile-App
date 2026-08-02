@@ -12,6 +12,7 @@ class EquipmentTopicScreen extends StatelessWidget {
   final IconData themeIcon;
   final List<EquipmentSubCategory> categories;
   final List<EquipmentGuide> guides;
+  final String? imagePath;
 
   const EquipmentTopicScreen({
     super.key,
@@ -22,6 +23,7 @@ class EquipmentTopicScreen extends StatelessWidget {
     required this.themeIcon,
     required this.categories,
     required this.guides,
+    this.imagePath,
   });
 
   EquipmentGuide? _guideFor(String subCategoryId) {
@@ -53,81 +55,90 @@ class EquipmentTopicScreen extends StatelessWidget {
                   color: Colors.white, fontWeight: FontWeight.w700),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [themeColor, themeColor.withValues(alpha: 0.72)],
-                  ),
-                ),
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.2),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: Icon(themeIcon,
-                                  color: Colors.white, size: 28),
-                            ),
-                            const SizedBox(width: 14),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    tagline,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    taglineSubtitle,
-                                    style: const TextStyle(
-                                      color: Colors.white70,
-                                      fontSize: 12,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 16),
-                        Row(
-                          children: [
-                            _StatChip(
-                              icon: Icons.checklist_outlined,
-                              label: '${categories.length} Gear Types',
-                            ),
-                            const SizedBox(width: 10),
-                            const _StatChip(
-                              icon: Icons.shopping_bag_outlined,
-                              label: 'Buying Guides',
-                            ),
-                            const SizedBox(width: 10),
-                            const _StatChip(
-                              icon: Icons.build_outlined,
-                              label: 'Care Tips',
-                            ),
-                          ],
-                        ),
-                      ],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  if (imagePath != null)
+                    Image.asset(imagePath!, fit: BoxFit.cover),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: imagePath != null
+                            ? [themeColor.withValues(alpha: 0.72), themeColor.withValues(alpha: 0.45)]
+                            : [themeColor, themeColor.withValues(alpha: 0.72)],
+                      ),
                     ),
                   ),
-                ),
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withValues(alpha: 0.2),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Icon(themeIcon,
+                                    color: Colors.white, size: 28),
+                              ),
+                              const SizedBox(width: 14),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      tagline,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      taglineSubtitle,
+                                      style: const TextStyle(
+                                        color: Colors.white70,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          Row(
+                            children: [
+                              _StatChip(
+                                icon: Icons.checklist_outlined,
+                                label: '${categories.length} Gear Types',
+                              ),
+                              const SizedBox(width: 10),
+                              const _StatChip(
+                                icon: Icons.shopping_bag_outlined,
+                                label: 'Buying Guides',
+                              ),
+                              const SizedBox(width: 10),
+                              const _StatChip(
+                                icon: Icons.build_outlined,
+                                label: 'Care Tips',
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

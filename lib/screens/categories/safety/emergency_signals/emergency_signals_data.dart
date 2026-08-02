@@ -63,7 +63,7 @@ class EmergencySignalsData {
       description:
           'How to build and sustain a visible fire or smoke column to attract rescue teams on land or in the air.',
       duration: '8 min',
-      youtubeVideoId: 'oP7L6YFPpv4', // Survival signal fire technique
+      youtubeVideoId: 'v-dkLDdOvOI', // Survival signal fire technique
       introduction:
           'A signal fire is one of the oldest and most reliable methods of calling for rescue. '
           'The key is creating maximum visibility — a fire that produces thick white smoke during the day '
@@ -85,7 +85,7 @@ class EmergencySignalsData {
       description:
           'Master the universal whistle distress code and other sound-based signaling methods for rescue situations.',
       duration: '6 min',
-      youtubeVideoId: 'btDkgVqJDxg', // Survival whistle signaling
+      youtubeVideoId: 'FSXrfaGSUhU', // Survival whistle signaling
       introduction:
           'A whistle is one of the most essential survival tools you can carry. It can be heard up to '
           '1 km away in still conditions — far further than a human shout. The universal distress signal '
@@ -108,7 +108,7 @@ class EmergencySignalsData {
       description:
           'How to use a signal mirror, watch face, or any reflective surface to signal aircraft or distant rescuers.',
       duration: '7 min',
-      youtubeVideoId: 'YJtEZBRLQaE', // Signal mirror technique
+      youtubeVideoId: '7M1UXSQJNng', // Signal mirror technique
       introduction:
           'A signal mirror is one of the most powerful long-range signaling tools available to a survivor. '
           'In bright sunlight, a standard military signal mirror can be seen by aircraft up to 50 km away. '
@@ -130,7 +130,7 @@ class EmergencySignalsData {
       description:
           'International ground-to-air symbols that communicate your situation clearly to search and rescue aircraft.',
       duration: '9 min',
-      youtubeVideoId: 'KzF_ZNVJP5g', // Ground to air rescue signals
+      youtubeVideoId: 'KrZG6WvnPCE', // Ground to air rescue signals
       introduction:
           'When search and rescue aircraft are overhead, ground-to-air symbols are a critical way to '
           'communicate your situation without a radio. These standardised symbols are recognised '
@@ -152,7 +152,7 @@ class EmergencySignalsData {
       description:
           'How Personal Locator Beacons (PLBs), EPIRBs, and satellite messengers work and when to activate them.',
       duration: '10 min',
-      youtubeVideoId: 'JDgGR5NRKe0', // PLB and EPIRB activation guide
+      youtubeVideoId: 'j0K0GpqCcLY', // PLB and EPIRB activation guide
       introduction:
           'Modern electronic distress devices have transformed wilderness rescue. A Personal Locator Beacon '
           '(PLB) transmits your GPS coordinates to satellites linked to national rescue coordination centres, '
@@ -175,7 +175,7 @@ class EmergencySignalsData {
       description:
           'Effective methods to signal for help after dark using light, fire, and other night-specific techniques.',
       duration: '7 min',
-      youtubeVideoId: 'T0RlaBfFljo', // Night survival signaling methods
+      youtubeVideoId: 'mnfhnyY-Udk', // Night survival signaling methods
       introduction:
           'Signaling at night requires completely different techniques from daytime signaling. '
           'Light becomes your most powerful tool — a sustained fire or torch can be seen for kilometres '

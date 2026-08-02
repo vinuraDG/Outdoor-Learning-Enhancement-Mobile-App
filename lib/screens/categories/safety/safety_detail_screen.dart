@@ -30,6 +30,7 @@ class SafetyDetailScreen extends StatelessWidget {
           themeIcon: Icons.sos_outlined,
           categories: EmergencySignalsData.categories,
           lessons: EmergencySignalsData.lessons,
+          imagePath: 'assets/images/emergency signals.png',
         );
 
       case 'Risk Management':
@@ -41,6 +42,7 @@ class SafetyDetailScreen extends StatelessWidget {
           themeIcon: Icons.warning_amber_outlined,
           categories: RiskManagementData.categories,
           lessons: RiskManagementData.lessons,
+          imagePath: 'assets/images/risk management.png',
         );
 
       case 'Wildlife Safety':
@@ -52,6 +54,7 @@ class SafetyDetailScreen extends StatelessWidget {
           themeIcon: Icons.pets_outlined,
           categories: WildlifeSafetyData.categories,
           lessons: WildlifeSafetyData.lessons,
+          imagePath: 'assets/images/wildlife safety.png',
         );
 
       case 'Fire Safety':
@@ -63,6 +66,7 @@ class SafetyDetailScreen extends StatelessWidget {
           themeIcon: Icons.local_fire_department_outlined,
           categories: FireSafetyData.categories,
           lessons: FireSafetyData.lessons,
+          imagePath: 'assets/images/fire safety.png',
         );
 
       default:

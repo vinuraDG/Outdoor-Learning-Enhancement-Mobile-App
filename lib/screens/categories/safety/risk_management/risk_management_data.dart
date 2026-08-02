@@ -63,7 +63,7 @@ class RiskManagementData {
       description:
           'How the STOP method — Stop, Think, Observe, Plan — prevents panic and leads to better decisions in emergencies.',
       duration: '7 min',
-      youtubeVideoId: 'ZNuXWgOv7io', // STOP survival method explained
+      youtubeVideoId: 'xH6aAqzczfA', // STOP survival method explained
       introduction:
           'In any outdoor emergency, the biggest enemy is panic. The STOP method is a proven psychological '
           'framework used by wilderness survival experts worldwide to slow down, assess the situation, and '
@@ -85,7 +85,7 @@ class RiskManagementData {
       description:
           'Recognising environmental, terrain, weather, and human hazards before they cause harm.',
       duration: '9 min',
-      youtubeVideoId: 'QdF6-u2XNMQ', // Hazard identification outdoors
+      youtubeVideoId: 'PDJJaPxCbxg', // Hazard identification outdoors
       introduction:
           'The best way to manage risk is to identify hazards before they become emergencies. '
           'Outdoors hazards fall into four broad categories: environmental (rockfall, flooding), '
@@ -107,7 +107,7 @@ class RiskManagementData {
       description:
           'How to plan a safe outdoor trip — route cards, emergency contacts, gear checks, and turnaround points.',
       duration: '10 min',
-      youtubeVideoId: 'iZUUPrjOJiU', // Outdoor trip planning and preparation
+      youtubeVideoId: 'wmrFmJE3TIE', // Outdoor trip planning and preparation
       introduction:
           'Good planning is the single most powerful risk management tool you have access to. '
           'The majority of outdoor emergencies are preventable through thorough pre-trip preparation. '
@@ -130,7 +130,7 @@ class RiskManagementData {
       description:
           'Reading weather patterns, understanding terrain effects, and making confident go/no-go decisions in the field.',
       duration: '9 min',
-      youtubeVideoId: 'p3vEJkNPSQ4', // Mountain and outdoor weather risk
+      youtubeVideoId: 'OEWQzUl1jQc', // Mountain and outdoor weather risk
       introduction:
           'Weather is the single most common contributing factor in outdoor emergencies worldwide. '
           'The ability to read weather signs, understand how terrain shapes local conditions, and make '
@@ -153,7 +153,7 @@ class RiskManagementData {
       description:
           'How to manage group dynamics, communication, and collective decision-making to keep everyone safe outdoors.',
       duration: '8 min',
-      youtubeVideoId: '6FeJJ7YKBCE', // Group outdoor leadership and safety
+      youtubeVideoId: 'GlWxRs_aQnU', // Group outdoor leadership and safety
       introduction:
           'Groups face unique safety challenges that solo travellers do not encounter. Pressure to keep '
           'up with faster members, social reluctance to voice safety concerns, and ambiguous leadership '
@@ -176,7 +176,7 @@ class RiskManagementData {
       description:
           'Step-by-step protocols for responding effectively to emergencies in the outdoors.',
       duration: '10 min',
-      youtubeVideoId: 'BELkRkVoetA', // Emergency action planning outdoors
+      youtubeVideoId: 'E0YqVXJ4mkc', // Emergency action planning outdoors
       introduction:
           'An Emergency Action Plan (EAP) is a pre-thought-out response framework that guides your '
           'actions when time is critical and stress is high. In a genuine emergency, adrenaline and '

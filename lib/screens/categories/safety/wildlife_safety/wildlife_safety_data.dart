@@ -63,7 +63,7 @@ class WildlifeSafetyData {
       description:
           'How to avoid attracting bears, what to do if you encounter one, and when to deploy bear spray.',
       duration: '10 min',
-      youtubeVideoId: 'u9N1r0c7gbI', // Bear safety in the wild
+      youtubeVideoId: 'YDyIwyU3FvY', // Bear safety in the wild
       introduction:
           'Bears are among the most commonly encountered large predators in wilderness areas worldwide. '
           'The vast majority of bear encounters are non-threatening — bears are typically as eager to '
@@ -85,7 +85,7 @@ class WildlifeSafetyData {
       description:
           'How to avoid snake encounters, identify venomous species, and respond correctly to a snakebite.',
       duration: '9 min',
-      youtubeVideoId: 'TfMBXBkRhtE', // Snake safety in the outdoors
+      youtubeVideoId: 'ChkCw2NeGYM', // Snake safety in the outdoors
       introduction:
           'Snakebite is a significant outdoor hazard in many tropical and subtropical regions. '
           'The majority of bites occur when people accidentally step on or attempt to handle snakes. '
@@ -108,7 +108,7 @@ class WildlifeSafetyData {
       description:
           'How to respond correctly to encounters with leopards, pumas, jaguars, and other large cats in the wild.',
       duration: '8 min',
-      youtubeVideoId: 'Bj2lqWAWEyY', // Big cat and mountain lion safety
+      youtubeVideoId: 'z0ebW3JMuIE', // Big cat and mountain lion safety
       introduction:
           'Big cat encounters are rare but require very specific responses that differ from bear protocols. '
           'Unlike bears, predatory big cats are ambush hunters — fleeing immediately triggers their '
@@ -131,7 +131,7 @@ class WildlifeSafetyData {
       description:
           'How to avoid disturbing bee or wasp nests, and what to do if you are attacked by a swarm.',
       duration: '7 min',
-      youtubeVideoId: 'ZDnnGvIbLXg', // Bee and wasp attack safety
+      youtubeVideoId: 'jZOyaXfCQ6Q', // Bee and wasp attack safety
       introduction:
           'Bee and wasp swarm attacks are far more dangerous than most people realise. While a single '
           'sting is painful but typically harmless, multiple stings from an agitated colony can be '
@@ -154,7 +154,7 @@ class WildlifeSafetyData {
       description:
           'Recognising wild boar behaviour, avoiding encounters, and responding correctly to a charge.',
       duration: '7 min',
-      youtubeVideoId: 'p0G_TIJfhZ8', // Wild boar encounter safety
+      youtubeVideoId: 'F60w6Z0EeeU', // Wild boar encounter safety
       introduction:
           'Wild boars are found across Asia, Europe, Africa, and have been introduced in many other regions. '
           'They are generally shy animals that prefer to avoid human contact, but they can be extremely '
@@ -177,7 +177,7 @@ class WildlifeSafetyData {
       description:
           'Protecting yourself from ticks, mosquitoes, sand flies, and the diseases they transmit outdoors.',
       duration: '8 min',
-      youtubeVideoId: 'EWvqjWe79Oo', // Tick and insect bite prevention guide
+      youtubeVideoId: 'xwLfo4oeLuc', // Tick and insect bite prevention guide
       introduction:
           'Vector-borne diseases transmitted by ticks and insects — including Lyme disease, malaria, '
           'dengue fever, Japanese encephalitis, and scrub typhus — affect millions of outdoor '

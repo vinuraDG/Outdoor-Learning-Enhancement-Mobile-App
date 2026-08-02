@@ -6,9 +6,22 @@ class NavigationDetailScreen extends StatelessWidget {
 
   const NavigationDetailScreen({super.key, required this.item});
 
+  String? _imagePath(String title) {
+    switch (title) {
+      case 'Map Reading': return 'assets/images/map reading.png';
+      case 'Compass Skills': return 'assets/images/compass skills.png';
+      case 'GPS Basics': return 'assets/images/GPS basics.png';
+      case 'Route Planning': return 'assets/images/route planing.png';
+      case 'Landmarks': return 'assets/images/landmarks.png';
+      default: return null;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final color = item['color'] as Color;
+    final title = item['title'] as String;
+    final imagePath = _imagePath(title);
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F4),
@@ -23,47 +36,56 @@ class NavigationDetailScreen extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
             ),
             title: Text(
-              item['title'] as String,
+              title,
               style: const TextStyle(
                   color: Colors.white, fontWeight: FontWeight.w700),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [color, color.withOpacity(0.7)],
-                  ),
-                ),
-                child: SafeArea(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          width: 52,
-                          height: 52,
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          child: Icon(item['icon'] as IconData,
-                              color: Colors.white, size: 28),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          item['subtitle'] as String,
-                          style: TextStyle(
-                              color: Colors.white.withOpacity(0.9),
-                              fontSize: 13),
-                        ),
-                      ],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  if (imagePath != null)
+                    Image.asset(imagePath, fit: BoxFit.cover),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: imagePath != null
+                            ? [color.withOpacity(0.72), color.withOpacity(0.45)]
+                            : [color, color.withOpacity(0.7)],
+                      ),
                     ),
                   ),
-                ),
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            width: 52,
+                            height: 52,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            child: Icon(item['icon'] as IconData,
+                                color: Colors.white, size: 28),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            item['subtitle'] as String,
+                            style: TextStyle(
+                                color: Colors.white.withOpacity(0.9),
+                                fontSize: 13),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
