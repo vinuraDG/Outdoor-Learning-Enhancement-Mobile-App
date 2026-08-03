@@ -8,7 +8,7 @@ class EquipmentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final items = MockData.equipmentItems;
+    const items = MockData.equipmentItems;
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F6F4),
@@ -40,8 +40,8 @@ class EquipmentScreen extends StatelessWidget {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          AppTheme.equipmentColor.withOpacity(0.72),
-                          AppTheme.equipmentColor.withOpacity(0.45),
+                          AppTheme.equipmentColor.withValues(alpha: 0.72),
+                          AppTheme.equipmentColor.withValues(alpha: 0.45),
                         ],
                       ),
                     ),
@@ -64,7 +64,7 @@ class EquipmentScreen extends StatelessWidget {
                           Text(
                             'Explore essential outdoor gear and learn how to use it.',
                             style: TextStyle(
-                              color: Colors.white.withOpacity(0.9),
+                              color: Colors.white.withValues(alpha: 0.9),
                               fontSize: 13,
                             ),
                           ),
@@ -109,55 +109,61 @@ class _EquipmentItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-      padding: const EdgeInsets.all(14),
+      constraints: const BoxConstraints(minHeight: 100),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
+            color: Colors.black.withValues(alpha: 0.04),
+            blurRadius: 8,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
       child: Row(
         children: [
           Container(
-            width: 48,
-            height: 48,
+            width: 52,
+            height: 52,
             decoration: BoxDecoration(
-              color: (item['color'] as Color).withOpacity(0.1),
-              borderRadius: BorderRadius.circular(12),
+              color: (item['color'] as Color).withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(14),
             ),
             child: Icon(
               item['icon'] as IconData,
               color: item['color'] as Color,
-              size: 24,
+              size: 26,
             ),
           ),
-          const SizedBox(width: 14),
+          const SizedBox(width: 16),
           Expanded(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   item['title'] as String,
                   style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
                     color: AppTheme.charcoal,
                   ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 3),
+                const SizedBox(height: 8),
                 Text(
                   item['subtitle'] as String,
-                  style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
+                  style: TextStyle(fontSize: 13, color: Colors.grey.shade600, height: 1.4),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
           ),
-          Icon(Icons.chevron_right, color: Colors.grey.shade400, size: 20),
+          Icon(Icons.chevron_right, color: Colors.grey.shade400, size: 22),
         ],
       ),
     );

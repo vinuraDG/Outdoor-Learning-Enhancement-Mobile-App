@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/bottom_nav.dart';
+import 'emergency_call_screen.dart';
 import 'tabs/home_tab.dart';
 import 'tabs/my_learning_tab.dart';
 import 'tabs/explore_tab.dart';
@@ -32,6 +33,17 @@ class _HomeScreenState extends State<HomeScreen> {
         index: _currentIndex,
         children: _tabs,
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const EmergencyCallScreen()),
+        ),
+        backgroundColor: Colors.red,
+        shape: const StadiumBorder(),
+        icon: const Icon(Icons.phone),
+        label: const Text('Emergency'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: AppBottomNav(
         currentIndex: _currentIndex,
         onTap: (i) => setState(() => _currentIndex = i),

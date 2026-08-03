@@ -3,6 +3,7 @@ import 'package:orc_app/screens/details/lesson_detail_screen.dart';
 import '../../models/mock_data.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/lesson_list_tile.dart';
+import '../../services/progress_service.dart';
 
 class MyLearningTab extends StatefulWidget {
   const MyLearningTab({super.key});
@@ -61,19 +62,31 @@ class _MyLearningTabState extends State<MyLearningTab>
         children: [
           _LessonList(
             lessons: MockData.lessons
-                .where((l) => l.progress > 0 && l.progress < 1.0)
+                .where((l) {
+                  // Use runtime progress if available from ProgressService, otherwise fallback to model value
+                  final p = ProgressService.getProgress(l.id);
+                  final prog = (p > 0.0) ? p : l.progress;
+                  return prog > 0 && prog < 1.0;
+                })
                 .toList(),
+            onReturnRefresh: () => setState(() {}),
           ),
           _LessonList(
             lessons: MockData.lessons
-                .where((l) => l.progress >= 1.0)
+                .where((l) {
+                  final p = ProgressService.getProgress(l.id);
+                  final prog = (p > 0.0) ? p : l.progress;
+                  return prog >= 1.0;
+                })
                 .toList(),
             emptyMessage: 'No completed lessons yet.\nKeep learning!',
+            onReturnRefresh: () => setState(() {}),
           ),
           _LessonList(
             lessons: MockData.lessons.take(2).toList(),
             showBookmark: true,
             emptyMessage: 'No saved lessons yet.',
+            onReturnRefresh: () => setState(() {}),
           ),
         ],
       ),
@@ -85,11 +98,13 @@ class _LessonList extends StatelessWidget {
   final List lessons;
   final bool showBookmark;
   final String emptyMessage;
+  final VoidCallback? onReturnRefresh;
 
   const _LessonList({
     required this.lessons,
     this.showBookmark = false,
     this.emptyMessage = 'Nothing here yet.',
+    this.onReturnRefresh,
   });
 
   @override
@@ -114,7 +129,7 @@ class _LessonList extends StatelessWidget {
           MaterialPageRoute(
             builder: (_) => LessonDetailScreen(lesson: lessons[index]),
           ),
-        ),
+        ).then((_) => onReturnRefresh?.call()),
       ),
     );
   }
